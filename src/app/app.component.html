@@ -1,3 +1,15 @@
-<h1>
-  {{title}}
-</h1>
+<h1>{{title}}</h1>
+    <h2>Predictions</h2>
+    <table class="table">
+      <tr>
+        <th>Agency</th>
+        <th>Office</th>
+        <th>Solicitation</th>
+      </tr>
+
+      <tr *ngFor="let prediction of predictions">
+          <td>{{prediction.agency}}</td>
+          <td>{{prediction.office}}</td>
+          <td>{{prediction.title}}</td>
+      </tr>
+      
