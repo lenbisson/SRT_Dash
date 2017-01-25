@@ -1,7 +1,17 @@
 export class Prediction {
     constructor (
-        public month: String,
+        public solNum: String,
+        public title: String,
+        public url: String,
+        public predictions: {RED: Number, GREEN: Number},
+        public reviewRec: Boolean,
+        public isReadable: Boolean,
+        public eitLikelihood: Boolean,
+        public Date: Date,
         public agency: String,
-        public name: String
+        public office: String,
+        public contact: String,
+        public position: String,
+        public reviewStatus: Boolean
     ) {}
 }

@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
 import { Prediction } from './prediction/prediction';
-import { PREDICTIONS } from './mock-predictions';
+
 
 @Injectable()
 export class PredictionService {

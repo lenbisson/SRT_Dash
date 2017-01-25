@@ -2,14 +2,34 @@
     <h2>Predictions</h2>
     <table class="table">
       <tr>
+        <th>Solicitation</th>
+        <th>Title</th>
+        <th>URL</th>
+        <th>Prediction</th>
+        <th>Review Recommended</th>
+        <th>Date</th>
+        <th>Readable?</th>
+        <th>EIT?</th>
         <th>Agency</th>
         <th>Office</th>
-        <th>Solicitation</th>
+        <th>Contact</th>
+        <th>Position</th>
+        <th>Review Status</th>
       </tr>
 
       <tr *ngFor="let prediction of predictions">
+          <td>{{prediction.solNum}}</td>
+          <td>{{prediction.title}}</td>
+          <td>{{prediction.url}}</td>
+          <td>{{prediction.predictions}}</td>
+          <td>{{prediction.reviewRec}}</td>
+          <td>{{prediction.date}}</td>
+          <td>{{prediction.isReadable}}</td>
+          <td>{{prediction.eitLikelihood}}</td>
           <td>{{prediction.agency}}</td>
           <td>{{prediction.office}}</td>
-          <td>{{prediction.title}}</td>
+          <td>{{prediction.contact}}</td>
+          <td>{{prediction.position}}</td>
+          <td>{{prediction.reviewStatus}}</td>
       </tr>
       
