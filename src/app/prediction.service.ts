@@ -12,7 +12,7 @@ import { Prediction } from './prediction/prediction';
 export class PredictionService {
 
   constructor ( private http: Http ){};
-  private predictionsUrl = 'http://localhost:3000/predictions';
+  private predictionsUrl = ' http://ec2-54-145-198-134.compute-1.amazonaws.com:3000/predictions';
   getPredictions() {
   
     return this.http.get(this.predictionsUrl)

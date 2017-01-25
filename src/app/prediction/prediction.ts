@@ -5,8 +5,8 @@ export class Prediction {
         public url: String,
         public predictions: {RED: Number, GREEN: Number},
         public reviewRec: Boolean,
-        public isReadable: Boolean,
-        public eitLikelihood: Boolean,
+        public isReadable: String, //modified
+        public eitLikelihood: String, //modified
         public Date: Date,
         public agency: String,
         public office: String,
