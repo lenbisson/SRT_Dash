@@ -1,3 +1,4 @@
+//Module: SRTDashAppComponent
 import { Component, Input, OnChanges } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 

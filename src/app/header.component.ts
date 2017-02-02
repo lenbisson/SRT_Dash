@@ -1,3 +1,4 @@
+//Module: SRTHeaderComponent
 import { Component, OnInit } from '@angular/core';
 
 @Component({

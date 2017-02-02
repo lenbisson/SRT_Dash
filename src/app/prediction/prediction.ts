@@ -1,3 +1,5 @@
+//Module: PredictionClass
+//function: Prediction Class definition
 export class Prediction {
     constructor (
         public solNum: String,
