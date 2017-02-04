@@ -19,9 +19,14 @@ export class FilterComponent implements OnInit {
   onSubmit(form: NgForm) {
   	var filterParams = {
   		agency: form.value.agencyFilter,
+  		office: form.value.officeFilter,
   		contact: form.value.contactFilter,
-  		eitLikelihood: form.value.eitFilter
+  		eitLikelihood: form.value.eitFilter,
+  		isReadable: form.value.readableFilter,
+  		reviewStatus: form.value.reviewStatusFilter
   	};
+
+  	console.log(filterParams);
 
   	this.predictionService.getFileteredPredictions(filterParams)
   		.subscribe(

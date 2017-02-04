@@ -1,4 +1,4 @@
-<form class="form-inline" (ngSubmit)="onSubmit(f)" #f="ngForm">
+<form class="usa-form form-inline" (ngSubmit)="onSubmit(f)" #f="ngForm">
   <div class="form-group">
     <label class="sr-only" for="agencyFilter">Agency</label>
     <input class="form-control" 
@@ -7,6 +7,15 @@
     	   placeholder="Agency"
     	   ngModel
     	   name="agencyFilter">
+  </div>
+  <div class="form-group">
+    <label class="sr-only" for="officeFilter">Office</label>
+    <input class="form-control" 
+           type="text"
+    	   id="officeFilter" 
+    	   placeholder="Office"
+    	   ngModel
+    	   name="officeFilter">
   </div>
   <div class="form-group">
     <label class="sr-only" for="contact">Contact</label>
@@ -19,12 +28,43 @@
   </div>
   <div class="form-group">
     <label class="sr-only" for="eit">EIT</label>
-    <input type="text" 
+    <select type="text" 
     	   class="form-control" 
     	   id="eitFilter" 
     	   placeholder="EIT"
     	   ngModel
     	   name="eitFilter">
+    	   <option value=""></option>
+    	   <option value="true">True</option>
+    	   <option value="false">False</option>
+    </select>
   </div>
+  <div class="form-group">
+    <label class="sr-only" for="readableFilter">Readable?</label>
+    <select type="text" 
+    	   class="form-control" 
+    	   id="readableFilter" 
+    	   placeholder="Readable?"
+    	   ngModel
+    	   name="readableFilter">
+    	   <option value=""></option>
+    	   <option value="true">True</option>
+    	   <option value="false">False</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label class="sr-only" for="reviewStatusFilter">Readable?</label>
+    <select type="text" 
+    	   class="form-control" 
+    	   id="reviewStatusFilter" 
+    	   placeholder="Readable?"
+    	   ngModel
+    	   name="reviewStatusFilter">
+    	   <option value=""></option>
+    	   <option value="true">True</option>
+    	   <option value="false">False</option>
+    </select>
+  </div>
+  
   <button type="submit" class="btn btn-default">Filter Results</button>
 </form>
