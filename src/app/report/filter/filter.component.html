@@ -1,6 +1,6 @@
-<form class="usa-form form-inline" (ngSubmit)="onSubmit(f)" #f="ngForm">
+<form class="usa-form" (ngSubmit)="onSubmit(f)" #f="ngForm">
   <div class="form-group">
-    <label class="sr-only" for="agencyFilter">Agency</label>
+    <label for="agencyFilter">Agency</label>
     <input class="form-control" 
            type="text"
     	   id="agencyFilter" 
@@ -9,7 +9,7 @@
     	   name="agencyFilter">
   </div>
   <div class="form-group">
-    <label class="sr-only" for="officeFilter">Office</label>
+    <label for="officeFilter">Office</label>
     <input class="form-control" 
            type="text"
     	   id="officeFilter" 
@@ -18,7 +18,7 @@
     	   name="officeFilter">
   </div>
   <div class="form-group">
-    <label class="sr-only" for="contact">Contact</label>
+    <label for="contact">Contact</label>
     <input type="text" 
     	   class="form-control" 
     	   id="contactFilter" 
@@ -27,7 +27,7 @@
     	   name="contactFilter">
   </div>
   <div class="form-group">
-    <label class="sr-only" for="eit">EIT</label>
+    <label for="eit">EIT</label>
     <select type="text" 
     	   class="form-control" 
     	   id="eitFilter" 
@@ -40,7 +40,7 @@
     </select>
   </div>
   <div class="form-group">
-    <label class="sr-only" for="readableFilter">Readable?</label>
+    <label for="readableFilter">Readable?</label>
     <select type="text" 
     	   class="form-control" 
     	   id="readableFilter" 
@@ -53,11 +53,11 @@
     </select>
   </div>
   <div class="form-group">
-    <label class="sr-only" for="reviewStatusFilter">Readable?</label>
+    <label for="reviewStatusFilter">Review Complete?</label>
     <select type="text" 
     	   class="form-control" 
     	   id="reviewStatusFilter" 
-    	   placeholder="Readable?"
+    	   placeholder="Review Complete?"
     	   ngModel
     	   name="reviewStatusFilter">
     	   <option value=""></option>

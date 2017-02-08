@@ -14,10 +14,10 @@ export class PredictionService {
 	pushedPredictions = new EventEmitter(); //added
 //function initialize HTTP service
   constructor ( private http: Http ){};
-  private predictionsUrl = 'http://ec2-54-145-198-134.compute-1.amazonaws.com:3000/predictions';
-  private predictionFilterUrl = 'http://ec2-54-145-198-134.compute-1.amazonaws.com:3000/predictions/filter';
-  // private predictionsUrl = 'http://localhost:3000/predictions';
-  // private predictionFilterUrl = 'http://localhost:3000/predictions/filter';
+  //private predictionsUrl = 'http://ec2-54-145-198-134.compute-1.amazonaws.com:3000/predictions';
+  //private predictionFilterUrl = 'http://ec2-54-145-198-134.compute-1.amazonaws.com:3000/predictions/filter';
+   private predictionsUrl = 'http://localhost:3000/predictions';
+   private predictionFilterUrl = 'http://localhost:3000/predictions/filter';
 
 
   //function gets all SRT predictions from the web service and MongoDB
