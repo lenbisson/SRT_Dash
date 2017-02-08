@@ -28,7 +28,7 @@ export class ReportComponent implements OnInit {
     },
     {
       display: 'Prediction', 
-      variable: 'predictions.RED', 
+      variable: 'predictions', 
       filter: 'text' 
     },
     {

@@ -9,7 +9,7 @@ import { OrderByPipe } from '../orderby';
 })
 export class TableSortableComponent implements OnInit {
 
-  @Input() columns: any[];
+ // @Input() columns: any[];
   @Input() data: any[];
   @Input() sort: any;
 
@@ -18,6 +18,7 @@ export class TableSortableComponent implements OnInit {
     }
   
     changeSorting(columnName): void{
+      console.log(columnName);
         var sort = this.sort;
         if (sort.column == columnName) {
             sort.descending = !sort.descending;
