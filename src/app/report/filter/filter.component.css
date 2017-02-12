@@ -1,1 +1,5 @@
-.usa-form label{color:white;}
+.usa-form label{
+	color:white;
+	height: 100%;}
+* { padding: 0; margin: 0; }
+

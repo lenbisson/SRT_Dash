@@ -1,4 +1,12 @@
-
-#filter {
-    background: #205493;
+.row {
+	height:100%;
 }
+
+.filter {
+    background: #205493;
+    flex-grow: 1;
+    height: 1000px;
+    padding-top: 0px;
+}
+
+
