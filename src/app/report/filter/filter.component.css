@@ -1,5 +1,17 @@
-.usa-form label{
-	color:white;
-	height: 100%;}
-* { padding: 0; margin: 0; }
+.us-button {
+	background-color: #205493;
+	color: white;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.us-button {width: 100%;}
+.us-button:hover {
+	background-color: #4773aa;
+	color: white;
+}
 

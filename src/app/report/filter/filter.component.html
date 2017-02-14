@@ -1,6 +1,6 @@
 <form class="usa-form" (ngSubmit)="onSubmit(f)" #f="ngForm">
   
-  <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#readable">Readable?</button>
+  <button type="button" class="us-button" data-toggle="collapse" data-target="#readable">Readable?</button>
   <div id="readable" class="collapse">
     <div class="form-group">
       <label for="readableFilter">Readable</label>
@@ -15,7 +15,7 @@
     </div>  
   </div>
   <hr>
-  <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#eit">Electronic & Information Technology?</button>
+  <button type="button" class="us-button" data-toggle="collapse" data-target="#eit">Electronic & Information Technology?</button>
   <div id="eit" class="collapse">
     <div class="form-group">
       <label for="eit">EIT</label>
@@ -30,7 +30,7 @@
     </div>  
   </div>
   <hr>
-  <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#reviewRec">Review Recommended?</button>
+  <button type="button" class="us-button" data-toggle="collapse" data-target="#reviewRec">Review Recommended?</button>
   <div id="reviewRec" class="collapse">
     <div class="form-group">
       <label for="reviewRec">Review Recommended</label>
@@ -51,11 +51,11 @@
            type="text"
     	   id="agencyFilter" 
     	   placeholder="Agency"
-    	   ngModel
+    	   [(ngModel)]="filterParams.agency"
     	   name="agencyFilter">
   </div>
   <hr>
-  <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#reviewStatus">Review Status</button>
+  <button type="button" class="us-button" data-toggle="collapse" data-target="#reviewStatus">Review Status</button>
   <div id="reviewStatus" class="collapse">
     <div class="form-group">
       <label for="reviewStatus">Review Status</label>
@@ -76,7 +76,7 @@
            type="text"
     	   id="officeFilter" 
     	   placeholder="Office"
-    	   ngModel
+    	   [(ngModel)]="filterParams.office"
     	   name="officeFilter">
   </div>
   <hr>
@@ -86,7 +86,7 @@
     	   class="form-control" 
     	   id="contactFilter" 
     	   placeholder="contact"
-    	   ngModel
+    	   [(ngModel)]="filterParams.contact"
     	   name="contactFilter">
   </div>
   

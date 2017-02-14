@@ -18,6 +18,7 @@ import { SrthomeComponent } from './srthome/srthome.component';
 import { AnalyticsComponent } from './analytics/analytics.component';
 import { SettingsComponent } from './settings/settings.component';
 import { PreExamComponent } from './pre-exam/pre-exam.component';
+import { AgencyService } from './agency.service';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,7 @@ import { PreExamComponent } from './pre-exam/pre-exam.component';
     HttpModule,
     routing
   ],
-  providers: [PredictionService],
+  providers: [PredictionService, AgencyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

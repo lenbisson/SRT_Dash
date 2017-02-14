@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from "@angular/forms";
 import { Prediction } from '../../prediction/prediction';
 import { PredictionService } from '../../prediction.service';
+import { AgencyService } from '../../agency.service';
 
 @Component({
   selector: 'app-filter',
@@ -10,6 +11,7 @@ import { PredictionService } from '../../prediction.service';
 })
 export class FilterComponent implements OnInit {
   predictions: Prediction[];
+  agencies: String[];
 
   filterParams = {
       agency: '',
@@ -31,11 +33,12 @@ export class FilterComponent implements OnInit {
     '',
     'Incomplete',
     'Complete'
-  ]
+  ];
 
-  constructor(private predictionService: PredictionService) { }
+  constructor(private predictionService: PredictionService, private agencyService: AgencyService) { }
 
   ngOnInit() {
+    this.agencies = this.agencyService.getAgencies();
   }
 
   onSubmit(form: NgForm) {	
