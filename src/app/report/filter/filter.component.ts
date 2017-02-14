@@ -11,24 +11,36 @@ import { PredictionService } from '../../prediction.service';
 export class FilterComponent implements OnInit {
   predictions: Prediction[];
 
+  filterParams = {
+      agency: '',
+      office: '',
+      contact: '',
+      eitLikelihood: '',
+      isReadable: '',
+      reviewStatus: '',
+      reviewRec: '' 
+    };
+
+  choices = [
+    '',
+    'Yes',
+    'No'
+  ];
+
+  status = [
+    '',
+    'Incomplete',
+    'Complete'
+  ]
+
   constructor(private predictionService: PredictionService) { }
 
   ngOnInit() {
   }
 
-  onSubmit(form: NgForm) {
-  	var filterParams = {
-  		agency: form.value.agencyFilter,
-  		office: form.value.officeFilter,
-  		contact: form.value.contactFilter,
-  		eitLikelihood: form.value.eitFilter,
-  		isReadable: form.value.readableFilter,
-  		reviewStatus: form.value.reviewStatusFilter
-  	};
-
-  	console.log(filterParams);
-
-  	this.predictionService.getFileteredPredictions(filterParams)
+  onSubmit(form: NgForm) {	
+  	console.log(this.filterParams);
+  	this.predictionService.getFileteredPredictions(this.filterParams)
   		.subscribe(
         	predictions => {
         		this.predictions = predictions;
