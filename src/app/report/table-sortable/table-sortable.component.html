@@ -1,4 +1,5 @@
 
+<div id="predictions">
 <table class="table table-striped table-hover">
      <thead> 
         <colgroup span="3"></colgroup>
@@ -15,7 +16,7 @@
         <th scope="col"(click)="changeSorting('url')">URL</th>
         <th scope="col">Prediction</th>
         <th scope="col" (click)="changeSorting('reviewRec')">Review Recommended</th>
-        <th scope="col" (click)="changeSorting('date')">Date</th>
+        <th scope="col" (click)="changeSorting('date')">Date Ingested</th>
         <th scope="col" (click)="changeSorting('isReadable')">Readable?</th>
         <th scope="col" (click)="changeSorting('eitLikelihood')">EIT?</th>
         <th scope="col" (click)="changeSorting('agency')">Agency</th>
@@ -41,3 +42,4 @@
           <td>{{prediction.reviewStatus}}</td>
         </tr>
       </table>
+      </div>

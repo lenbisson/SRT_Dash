@@ -1,17 +1,19 @@
 <div id="filter">
 <form class="usa-form" (ngSubmit)="onSubmit(f)" #f="ngForm">
-  
+
+  <button type="submit" class="btn us-sub">Filter Results</button>
+<hr>  
   <button type="button" class="us-button" data-toggle="collapse" data-target="#readable">Readable?</button>
   <div id="readable" class="collapse">
     <div class="form-group">
-      <label for="readableFilter">Readable</label>
+      <label class="sr-only" for="readableFilter">Readable</label>
       <div class="radio" *ngFor="let c of choices">
           <label>
            <input type="radio" 
                   name="readableFilter"
                   id="readableFilter" 
                   [(ngModel)]="filterParams.isReadable"
-                  value="{{c}}">{{c}}</label>
+                  value="{{c.value}}">{{c.display}}</label>
       </div>    
     </div>  
   </div>
@@ -19,14 +21,14 @@
   <button type="button" class="us-button" data-toggle="collapse" data-target="#eit">Electronic & Information Technology?</button>
   <div id="eit" class="collapse">
     <div class="form-group">
-      <label for="eit">EIT</label>
+      <label class="sr-only" for="eit">EIT</label>
       <div class="radio" *ngFor="let c of choices">
           <label>
            <input type="radio" 
                   name="eitFilter"
                   id="eitFilter" 
                   [(ngModel)]="filterParams.eitLikelihood"
-                  value="{{c}}">{{c}}</label>
+                  value="{{c.value}}">{{c.display}}</label>
       </div>    
     </div>  
   </div>
@@ -34,32 +36,35 @@
   <button type="button" class="us-button" data-toggle="collapse" data-target="#reviewRec">Review Recommended?</button>
   <div id="reviewRec" class="collapse">
     <div class="form-group">
-      <label for="reviewRec">Review Recommended</label>
+      <label class="sr-only" for="reviewRec">Review Recommended</label>
       <div class="radio" *ngFor="let c of choices">
           <label>
            <input type="radio" 
                   name="reviewRecommendedFilter"
                   id="reviewRecommendedFilter" 
                   [(ngModel)]="filterParams.reviewRec"
-                  value="{{c}}">{{c}}</label>
+                  value="{{c.value}}">{{c.display}}</label>
       </div>    
     </div>  
   </div>
   <hr>
-  <div class="form-group">
-    <label for="agencyFilter">Agency</label>
-    <input class="form-control" 
-           type="text"
-    	   id="agencyFilter" 
-    	   placeholder="Agency"
-    	   [(ngModel)]="filterParams.agency"
-    	   name="agencyFilter">
+  <button type="button" class="us-button" data-toggle="collapse" data-target="#agency">Agency</button>
+  <div id="agency" class="collapse">
+    <div class="form-group">
+      <label class="sr-only" for="agency">Agency</label>
+       <input class="form-control" 
+              type="text"
+              id="agency" 
+              placeholder="Agency"
+              [(ngModel)]="filterParams.agency"
+              name="agency">
+    </div>  
   </div>
   <hr>
   <button type="button" class="us-button" data-toggle="collapse" data-target="#reviewStatus">Review Status</button>
   <div id="reviewStatus" class="collapse">
     <div class="form-group">
-      <label for="reviewStatus">Review Status</label>
+      <label class="sr-only" for="reviewStatus">Review Status</label>
       <div class="radio" *ngFor="let c of status">
           <label>
            <input type="radio" 
@@ -71,27 +76,31 @@
     </div>  
   </div>
   <hr>
-  <div class="form-group">
-    <label for="officeFilter">Office</label>
-    <input class="form-control" 
+   <button type="button" class="us-button" data-toggle="collapse" data-target="#office">Office</button>
+  <div id="office" class="collapse">
+    <div class="form-group">
+      <label class="sr-only" for="office">Office</label>
+      <input class="form-control" 
            type="text"
-    	   id="officeFilter" 
-    	   placeholder="Office"
-    	   [(ngModel)]="filterParams.office"
-    	   name="officeFilter">
+         id="office" 
+         placeholder="Office"
+         [(ngModel)]="filterParams.office"
+         name="office">    
+    </div>  
   </div>
   <hr>
-  <div class="form-group">
-    <label for="contact">Contact</label>
-    <input type="text" 
-    	   class="form-control" 
-    	   id="contactFilter" 
-    	   placeholder="contact"
-    	   [(ngModel)]="filterParams.contact"
-    	   name="contactFilter">
+  <button type="button" class="us-button" data-toggle="collapse" data-target="#contact">Contact</button>
+  <div id="contact" class="collapse">
+    <div class="form-group">
+      <label class="sr-only" for="contact">Contact</label>
+      <input type="text" 
+         class="form-control" 
+         id="contact" 
+         placeholder="contact"
+         [(ngModel)]="filterParams.contact"
+         name="contact">    
+    </div>  
   </div>
-  
-  
-  <button type="submit" class="btn btn-default">Filter Results</button>
+  <hr>    
 </form> 
 </div>

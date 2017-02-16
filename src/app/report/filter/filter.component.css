@@ -2,8 +2,8 @@
 	background-color: #205493;
 	color: white;
     border: none;
-    padding: 15px 32px;
-    text-align: center;
+    padding: 15px 0px;
+    text-align: left;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
@@ -17,5 +17,16 @@
 
 #filter {
 	padding: 0px 10px;  
+}
+
+hr {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.us-sub {
+	padding: 15px;
+	color: black;
+	margin: 15px;
 }
 

@@ -20,13 +20,13 @@ export class FilterComponent implements OnInit {
       eitLikelihood: '',
       isReadable: '',
       reviewStatus: '',
-      reviewRec: '' 
+      reviewRec: '', 
     };
 
   choices = [
-    '',
-    'Yes',
-    'No'
+    {value: '', display: 'All'},
+    {value: 'Yes', display: 'Yes'},
+    {value: 'No', display: 'No'}
   ];
 
   status = [

@@ -2,18 +2,19 @@
 	background-color: white;
 }
 
-
 #header {
 	top: 0px;
    margin:0px;  
    padding: 0px 2px 2px 3px;    
-   border-width: 2px;
+  /* border-width: 2px;
    border-bottom-width:2px;
    border-bottom-color: #112e51;
    border-bottom-style: solid;
-   width: 100%;
+   width: 100%;*/
 }
-
+#navbar a {
+	padding-top: 20px;
+}
 #navbar a:link
 {
 text-decoration: none;
@@ -32,4 +33,20 @@ font-size: medium;
 font-weight: bold;
 letter-spacing: 1px;
 }
+
+img {
+	max-width: 100%;
+	max-height: 60px;
+	float: right;
+}
+
+hr {
+   display: block;
+    height: 3px;
+    border: 0;
+    border-top: 1px solid #112e51;
+    margin: 5px 0;
+    padding: 0; 
+}
+
 
