@@ -1,3 +1,7 @@
+body {
+    font-family: Source Sans Pro !important;
+}
+
 .row {
 	height:100%;
 	padding: 0px 5px 0px 0px;  
@@ -12,3 +16,13 @@
 }
 
 
+
+/* Override padding for bootstrap. */
+.nopadding {
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
+body {
+    font-family: Source Sans Pro !important;
+}
