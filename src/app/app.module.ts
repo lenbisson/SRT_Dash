@@ -19,6 +19,7 @@ import { AnalyticsComponent } from './analytics/analytics.component';
 import { SettingsComponent } from './settings/settings.component';
 import { PreExamComponent } from './pre-exam/pre-exam.component';
 import { AgencyService } from './agency.service';
+import { SolicitationDetailComponent } from './report/solicitation-detail/solicitation-detail.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { AgencyService } from './agency.service';
     SrthomeComponent,
     AnalyticsComponent,
     SettingsComponent,
-    PreExamComponent
+    PreExamComponent,
+    SolicitationDetailComponent
   ],
   imports: [
     BrowserModule,

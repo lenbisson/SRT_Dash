@@ -42,7 +42,6 @@ export class FilterComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {	
-  	console.log(this.filterParams);
   	this.predictionService.getFileteredPredictions(this.filterParams)
   		.subscribe(
         	predictions => {
@@ -52,8 +51,28 @@ export class FilterComponent implements OnInit {
         	err => {
           		console.log(err);
         	});
-  			
+  }
 
+  onClear() {
+    this.filterParams = {
+      agency: '',
+      office: '',
+      contact: '',
+      eitLikelihood: '',
+      isReadable: '',
+      reviewStatus: '',
+      reviewRec: '', 
+    };
+
+    this.predictionService.getFileteredPredictions(this.filterParams)
+      .subscribe(
+          predictions => {
+            this.predictions = predictions;
+            this.predictionService.pushPredictions(predictions);
+          },
+          err => {
+              console.log(err);
+          });
   }
 
   

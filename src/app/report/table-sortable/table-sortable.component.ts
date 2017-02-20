@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 import { OrderByPipe } from '../orderby';
+import { PredictionService } from '../../prediction.service';
 
 @Component({
   selector: 'app-table-sortable',
@@ -12,6 +13,16 @@ export class TableSortableComponent implements OnInit {
  // @Input() columns: any[];
   @Input() data: any[];
   @Input() sort: any;
+
+  filterParams = {
+      agency: '',
+      office: '',
+      contact: '',
+      eitLikelihood: '',
+      isReadable: '',
+      reviewStatus: '',
+      reviewRec: '', 
+    };
 
   selectedClass(columnName): any{
         return columnName == this.sort.column ? 'sort-' + this.sort.descending : false;
@@ -31,9 +42,25 @@ export class TableSortableComponent implements OnInit {
     convertSorting(): string{
         return this.sort.descending ? '-' + this.sort.column : this.sort.column;
     }
-  constructor() { }
+//function constructor to instantiate the data service
+  constructor(private predictionService: PredictionService) {}
 
-  ngOnInit() {
+//function that initializes data to display in the 508 report
+  ngOnInit(): void {
+    this.predictionService.getFileteredPredictions(this.filterParams)
+      .subscribe(
+          predictions => {
+            this.data = predictions;
+          },
+          err => {
+              console.log(err);
+          });
+    this.predictionService.pushedPredictions.subscribe(
+      data => this.data = data);
+  }
+
+  onUpdate(solicitation: any) {
+    this.predictionService.pushSolicitation(solicitation);
   }
 
 }

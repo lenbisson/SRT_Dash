@@ -11,13 +11,14 @@ import { Prediction } from './prediction/prediction';
 
 @Injectable()
 export class PredictionService {
-	pushedPredictions = new EventEmitter(); //added
+	pushedPredictions = new EventEmitter();
+  pushedSolicitation = new EventEmitter();
 //function initialize HTTP service
   constructor ( private http: Http ){};
-  private predictionsUrl = 'http://ec2-54-145-198-134.compute-1.amazonaws.com:3000/predictions';
-  private predictionFilterUrl = 'http://ec2-54-145-198-134.compute-1.amazonaws.com:3000/predictions/filter';
-   // private predictionsUrl = 'http://localhost:3000/predictions';
-   // private predictionFilterUrl = 'http://localhost:3000/predictions/filter';
+  // private predictionsUrl = 'http://ec2-54-145-198-134.compute-1.amazonaws.com:3000/predictions';
+  // private predictionFilterUrl = 'http://ec2-54-145-198-134.compute-1.amazonaws.com:3000/predictions/filter';
+   private predictionsUrl = 'http://localhost:3000/predictions';
+   private predictionFilterUrl = 'http://localhost:3000/predictions/filter';
 
 
   //function gets all SRT predictions from the web service and MongoDB
@@ -32,10 +33,15 @@ export class PredictionService {
   getFileteredPredictions(body) { //added
   	return this.http.post(this.predictionFilterUrl, body) //added
 	  	.map((res: Response) => res.json()) //added
-		.catch((error:any) => Observable.throw(error.json().error || 'Server Error'));  }  //added
+		.catch((error:any) => Observable.throw(error.json().error || 'Server Error'));  } 
 
 
   pushPredictions(predictions: Prediction[]) {
   	this.pushedPredictions.emit(predictions);
+  }
+
+  pushSolicitation(solicitation: any) {
+   this.pushedSolicitation.emit(solicitation);
+console.log(solicitation);
   }
 }
