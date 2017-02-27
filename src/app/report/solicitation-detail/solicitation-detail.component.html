@@ -1,4 +1,4 @@
-<div id="prediction">
+<div id="prediction" class="col-md-10 nopadding">
     <table class="table table-striped table-hover">
          <thead> 
             <colgroup span="3"></colgroup>
@@ -15,20 +15,19 @@
                 <th scope="col">Date Ingested</th>
                 <th scope="col">Readable?</th>
                 <th scope="col">EIT?</th>
-                <th scope="col">Review Recommended</th>
             </tr>
             </thead>
-            <tr>
+            <tr *ngIf="solicitation">
                 <td>{{solicitation.solNum}}</td>
                 <td>{{solicitation.title}}</td>
                 <td><div style="width: 200px; overflow: hidden; word-break: break-all">{{solicitation.url}}</div></td>
-             <!--   <td>Red {{solicitation.predictions.RED}} <br>
-                    Green: {{solicitation.predictions.GREEN}}</td> -->
+                <td>Red {{solicitation.predictions.RED}} <br>
+                    Green: {{solicitation.predictions.GREEN}}</td>
                 <td>{{solicitation.date}}</td>
                 <td>{{solicitation.isReadable}}</td>
                 <td>{{solicitation.eitLikelihood}}</td>
-                <td>{{solicitation.reviewRec}}</td>
             </tr>
     </table>
 </div>
+<router-outlet></router-outlet>
 

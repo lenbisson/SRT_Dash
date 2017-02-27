@@ -1,5 +1,8 @@
 //Module: SRTHeaderComponent
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -7,10 +10,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor() { }
+  firstName = localStorage.getItem('firstName');
+  constructor(private authService: AuthService,
+              private router: Router) { }
 
   ngOnInit() {
+  }
+
+  onLogout() {
+    this.authService.logout();
+    this.router.navigate(['/auth', 'login']);
   }
 
 }

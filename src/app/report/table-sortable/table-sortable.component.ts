@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { OrderByPipe } from '../orderby';
 import { PredictionService } from '../../prediction.service';
@@ -43,7 +44,10 @@ export class TableSortableComponent implements OnInit {
         return this.sort.descending ? '-' + this.sort.column : this.sort.column;
     }
 //function constructor to instantiate the data service
-  constructor(private predictionService: PredictionService) {}
+  constructor(
+    private predictionService: PredictionService,
+    private router: Router
+    ) {}
 
 //function that initializes data to display in the 508 report
   ngOnInit(): void {
@@ -59,8 +63,8 @@ export class TableSortableComponent implements OnInit {
       data => this.data = data);
   }
 
-  onUpdate(solicitation: any) {
-    this.predictionService.pushSolicitation(solicitation);
+  onReview(prediction: any) {
+    this.router.navigate(['/srt/solicitation', prediction._id, 'review']);
   }
 
 }

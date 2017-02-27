@@ -2,7 +2,6 @@
 //function: Prediction Class definition
 export class Prediction {
     constructor (
-        public id: String,
         public solNum: String,
         public title: String,
         public url: String,

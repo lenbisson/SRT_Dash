@@ -13,6 +13,8 @@ export class FilterComponent implements OnInit {
   predictions: Prediction[];
   agencies: String[];
 
+// initial state for filter fields
+// likely need to tweek this when we get login and roles implemented.
   filterParams = {
       agency: '',
       office: '',
@@ -23,12 +25,14 @@ export class FilterComponent implements OnInit {
       reviewRec: '', 
     };
 
+// radio button choices
   choices = [
     {value: '', display: 'All'},
     {value: 'Yes', display: 'Yes'},
     {value: 'No', display: 'No'}
   ];
 
+// review status 
   status = [
     '',
     'Incomplete',
@@ -53,6 +57,8 @@ export class FilterComponent implements OnInit {
         	});
   }
 
+// Listens to click event in the Filter component, "Clear All".  Resets filter parameters to
+// original state, and resets unfiltered data.
   onClear() {
     this.filterParams = {
       agency: '',
@@ -74,7 +80,5 @@ export class FilterComponent implements OnInit {
               console.log(err);
           });
   }
-
-  
 
 }

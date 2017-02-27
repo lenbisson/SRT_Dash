@@ -5,6 +5,7 @@ import { Observable } from  'rxjs/Rx';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/toPromise';
 
 import { Prediction } from './prediction/prediction';
 
@@ -19,20 +20,21 @@ export class PredictionService {
   // private predictionFilterUrl = 'http://ec2-54-145-198-134.compute-1.amazonaws.com:3000/predictions/filter';
    private predictionsUrl = 'http://localhost:3000/predictions';
    private predictionFilterUrl = 'http://localhost:3000/predictions/filter';
+   private solicitationUrl = 'http://localhost:3000/solicitation';
 
 
-  //function gets all SRT predictions from the web service and MongoDB
-  getPredictions() {
+  // //function gets all SRT predictions from the web service and MongoDB
+  // getPredictions() {
   
-    return this.http.get(this.predictionsUrl)
-      .map((res:Response) => res.json())
-      .catch((error:any) => Observable.throw(error.json().error || 'Server Error'));
+  //   return this.http.get(this.predictionsUrl)
+  //     .map((res:Response) => res.json())
+  //     .catch((error:any) => Observable.throw(error.json().error || 'Server Error'));
     
-  }
+  // }
 
-  getFileteredPredictions(body) { //added
-  	return this.http.post(this.predictionFilterUrl, body) //added
-	  	.map((res: Response) => res.json()) //added
+  getFileteredPredictions(body) { 
+  	return this.http.post(this.predictionFilterUrl, body) 
+	  	.map((res: Response) => res.json()) 
 		.catch((error:any) => Observable.throw(error.json().error || 'Server Error'));  } 
 
 
@@ -40,8 +42,10 @@ export class PredictionService {
   	this.pushedPredictions.emit(predictions);
   }
 
-  pushSolicitation(solicitation: any) {
-   this.pushedSolicitation.emit(solicitation);
-console.log(solicitation);
+  getSolicitation(index: String): Observable<Prediction> {
+    const solUrl = 'http://localhost:3000/solicitation/58ae2e63ef824fb75f4459e2';
+    return this.http.get(solUrl)
+      .map((res: Response) => res.json());
+      
   }
 }

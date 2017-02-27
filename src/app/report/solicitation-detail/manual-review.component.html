@@ -1,0 +1,88 @@
+<div class="container">
+<h2>Manual Review</h2>
+	<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+		<div class="reviewData">
+			<div>
+				<label for="eit">(1) Does this solicitation identify Information and
+					Communication Technology (ICT) deliverables that are covered under the law?</label>
+					<div class="form-group">
+                    <label class="sr-only" for="eit">Agency Conformance</label>
+                    <div class="radio" *ngFor="let c of choices">
+                        <label>
+                            <input type="radio"  name="eit"
+                                    id="eit" 
+                                    [(ngModel)]="review.eit"
+                                    value="{{c.value}}">{{c.display}}
+                        </label>
+                    </div>    
+                </div> 
+			</div>
+			<div>
+				<label for="standards">(2) Does this solicitation identify applicable 508 standards for each ICT deliverable covered by the law?</label>
+				<div class="form-group">
+                    <label class="sr-only" for="standards">Agency Conformance</label>
+                    <div class="radio" *ngFor="let c of choices">
+                        <label>
+                            <input type="radio"  name="standards"
+                                    id="standards" 
+                                    [(ngModel)]="review.standards"
+                                    value="{{c.value}}">{{c.display}}
+                        </label>
+                    </div>    
+                </div> 
+			</div>
+			<div>
+				<label for="v_conformance">(3) Does this solicitation identify how vendors shall define conformance for each ICT deliverable?</label>
+				<div class="form-group">
+                    <label class="sr-only" for="v_conformance">Agency Conformance</label>
+                    <div class="radio" *ngFor="let c of choices">
+                        <label>
+                            <input type="radio"  name="v_conformance"
+                                    id="v_conformance" 
+                                    [(ngModel)]="review.v_conformance"
+                                    value="{{c.value}}">{{c.display}}
+                        </label>
+                    </div>    
+                </div> 
+			</div>
+			<div>
+				<label for="evaluation">(4) Does this solicitation include evaluation criteria for 508 conformance?</label>
+				<div class="form-group">
+                    <label class="sr-only" for="evaluation">Agency Conformance</label>
+                    <div class="radio" *ngFor="let c of choices">
+                        <label>
+                            <input type="radio"  name="evaluation"
+                                    id="evaluation" 
+                                    [(ngModel)]="review.evaluation"
+                                    value="{{c.value}}">{{c.display}}
+                        </label>
+                    </div>    
+                </div> 
+			</div>
+			<div>
+				<label>(5) Does this solicitation establish how 508 conformance would be determined by the agency?</label>
+				<div class="form-group">
+                    <label class="sr-only" for="a_conformance">Agency Conformance</label>
+                    <div class="radio" *ngFor="let c of choices">
+                        <label>
+                            <input type="radio"  name="a_conformance"
+                                    id="a_conformance" 
+                                    [(ngModel)]="review.a_conformance"
+                                    value="{{c.value}}">{{c.display}}
+                        </label>
+                    </div>    
+                </div> 
+
+			</div>			
+		</div>
+		<div class="form-group">
+			<label for="comment">Comment</label>
+			<input type="text"
+			       class="form-control"
+			       id="comment"
+			       [(ngModel)]="review.comment"
+			       name="comment">
+		</div>
+		<button type="submit" class="btn btn-primary">Submit</button>
+	</form>
+</div>
