@@ -71,13 +71,14 @@
                                     data-toggle="dropdown"
                                     role="button"
                                     aria-haspopup="true"
-                                    aria-expanded="false">Hi, {{firstName}} <span class="caret"></span></a>
-                        <div class="dropdown-menu">
+                                    aria-expanded="false">Hi, {{firstName}}<span class="caret"></span></a>
+
+                        <a href="#" class="dropdown-toggle" style="font-weight: 300" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hi, {{firstName}} <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
                             <li><a href="#" style="padding: 10px 20px;">Login</a></li>
                             <li><a href="#" style="padding: 10px 20px;">Other</a></li>
-                            <!--<li role="separator" class="divider" style="margin: 0px;"></li>-->
                             <li><button class="dropdown-item" type="button" style="padding: 10px 20px;" (click)="onLogout()">Log Out</button></li>
-                        </div>
+                      </ul>
                     </li>
                 </ul>
 

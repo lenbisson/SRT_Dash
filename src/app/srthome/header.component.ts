@@ -10,9 +10,16 @@ import { AuthService } from '../auth/auth.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+<<<<<<< HEAD
   firstName = localStorage.getItem('firstName');
   constructor(private authService: AuthService,
               private router: Router) { }
+=======
+
+  firstName = localStorage.getItem("firstName");
+
+  constructor() { }
+>>>>>>> sol_detail_component
 
   ngOnInit() {
   }

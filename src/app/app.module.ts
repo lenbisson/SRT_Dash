@@ -25,8 +25,8 @@ import { ManualReviewComponent } from './report/solicitation-detail/manual-revie
 import { GreenReviewComponent } from './report/solicitation-detail/green-review.component';
 import { RedReviewComponent } from './report/solicitation-detail/red-review.component';
 import { AuthComponent } from './auth/auth.component';
-import { UserlogoutComponent } from './auth/userlogout/userlogout.component';
 import { AuthService } from './auth/auth.service';
+import { UserlogoutComponent } from './auth/userlogout/userlogout.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +39,8 @@ import { AuthService } from './auth/auth.service';
     SolReportHeaderComponent,
     UserloginComponent,
     UserregistrationComponent,
+    UserlogoutComponent,
+    AuthComponent,
     SrthomeComponent,
     AnalyticsComponent,
     SettingsComponent,
@@ -56,7 +58,8 @@ import { AuthService } from './auth/auth.service';
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    routing
+    routing,
+    ReactiveFormsModule
   ],
   providers: [PredictionService, AgencyService, AuthService],
   bootstrap: [AppComponent]
