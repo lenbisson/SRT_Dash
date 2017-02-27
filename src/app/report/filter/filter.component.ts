@@ -22,7 +22,7 @@ export class FilterComponent implements OnInit {
       eitLikelihood: '',
       isReadable: '',
       reviewStatus: '',
-      reviewRec: '', 
+      reviewRec: '',
     };
 
 // radio button choices
@@ -32,7 +32,7 @@ export class FilterComponent implements OnInit {
     {value: 'No', display: 'No'}
   ];
 
-// review status 
+// review status
   status = [
     '',
     'Incomplete',
@@ -45,7 +45,7 @@ export class FilterComponent implements OnInit {
     this.agencies = this.agencyService.getAgencies();
   }
 
-  onSubmit(form: NgForm) {	
+  onSubmit(form: NgForm) {
   	this.predictionService.getFileteredPredictions(this.filterParams)
   		.subscribe(
         	predictions => {
@@ -60,14 +60,18 @@ export class FilterComponent implements OnInit {
 // Listens to click event in the Filter component, "Clear All".  Resets filter parameters to
 // original state, and resets unfiltered data.
   onClear() {
+    var agency = localStorage.getItem("agency");
+    if (agency == "General Services Administration"){
+      agency = "";
+    } 
     this.filterParams = {
-      agency: '',
+      agency: agency,
       office: '',
       contact: '',
       eitLikelihood: '',
       isReadable: '',
       reviewStatus: '',
-      reviewRec: '', 
+      reviewRec: '',
     };
 
     this.predictionService.getFileteredPredictions(this.filterParams)

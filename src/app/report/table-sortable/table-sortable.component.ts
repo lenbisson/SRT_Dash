@@ -22,13 +22,13 @@ export class TableSortableComponent implements OnInit {
       eitLikelihood: '',
       isReadable: '',
       reviewStatus: '',
-      reviewRec: '', 
+      reviewRec: '',
     };
 
   selectedClass(columnName): any{
         return columnName == this.sort.column ? 'sort-' + this.sort.descending : false;
     }
-  
+
     changeSorting(columnName): void{
       console.log(columnName);
         var sort = this.sort;
@@ -39,7 +39,7 @@ export class TableSortableComponent implements OnInit {
             sort.descending = false;
         }
     }
-  
+
     convertSorting(): string{
         return this.sort.descending ? '-' + this.sort.column : this.sort.column;
     }
@@ -51,6 +51,7 @@ export class TableSortableComponent implements OnInit {
 
 //function that initializes data to display in the 508 report
   ngOnInit(): void {
+    this.initFilterParams();
     this.predictionService.getFileteredPredictions(this.filterParams)
       .subscribe(
           predictions => {
@@ -65,6 +66,15 @@ export class TableSortableComponent implements OnInit {
 
   onReview(prediction: any) {
     this.router.navigate(['/srt/solicitation', prediction._id, 'review']);
+  }
+
+  initFilterParams() {
+    var agency = localStorage.getItem("agency");
+    if (agency == "General Services Administration"){
+      this.filterParams.agency = "";
+    } else {
+      this.filterParams.agency = localStorage.getItem("agency");
+    }
   }
 
 }
