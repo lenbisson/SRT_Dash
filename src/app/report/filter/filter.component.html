@@ -1,6 +1,6 @@
 <div id="filter">
     <form class="usa-form" (ngSubmit)="onSubmit(f)" #f="ngForm">
-        
+
         <!-- Apply -->
         <div class="filter-section" style="padding: 20px;">
             <table style="width: 100%;">
@@ -8,142 +8,149 @@
                     <td style="font-size: 24px;">Filter by</td>
                     <td><button type="submit" class="btn us-sub" style="padding: 2px 15px; margin: 0px; float: right; font-weight: 500; ">Apply</button></td>
                 </tr>
-            </table>           
+            </table>
         </div>
-        <hr style="border-width: 2px;">   
-        
+        <hr style="border-width: 2px;">
+
         <!-- Clear All -->
         <div class="filter-section" style="width: 100%; text-align: right">
             <button type="button" class="us-button" style="text-align: right; padding-right: 20px;"
             (click)="onClear()">Clear All</button>
         </div>
-        <hr style="border-width: 0.5px;">   
+        <hr style="border-width: 0.5px;">
         <!-- Readable -->
         <div class="filter-section">
-            <button type="button" class="us-button" data-toggle="collapse" data-target="#readable">Readable</button>
+            <button type="button" class="us-button" data-toggle="collapse" data-target="#readable">Machine Readable
+            <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></button>
             <div id="readable" class="collapse">
                 <div class="form-group">
                     <label class="sr-only" for="readableFilter">Readable</label>
                     <div class="radio" *ngFor="let c of choices">
                         <label>
                             <input type="radio"  name="readableFilter"
-                                    id="readableFilter" 
+                                    id="readableFilter"
                                     [(ngModel)]="filterParams.isReadable"
                                     value="{{c.value}}">{{c.display}}
                         </label>
-                    </div>    
-                </div>  
+                    </div>
+                </div>
             </div>
-        </div>        
+        </div>
         <hr>
         <!-- Electronic & Information Technology -->
         <div class="filter-section">
-            <button type="button" class="us-button" data-toggle="collapse" data-target="#eit">Electronic & Information Technology</button>
+            <button type="button" class="us-button" data-toggle="collapse" data-target="#eit">Electronic & Information Technology
+            <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></button>
             <div id="eit" class="collapse">
                 <div class="form-group">
                     <label class="sr-only" for="eit">EIT</label>
                     <div class="radio" *ngFor="let c of choices">
                         <label>
-                        <input type="radio" 
+                        <input type="radio"
                                 name="eitFilter"
-                                id="eitFilter" 
+                                id="eitFilter"
                                 [(ngModel)]="filterParams.eitLikelihood"
                                 value="{{c.value}}">{{c.display}}
                         </label>
-                    </div>    
-                </div>  
+                    </div>
+                </div>
             </div>
         </div>
-        
+
         <hr>
-        
+
         <!-- Review Recommended -->
         <div class="filter-section">
-            <button type="button" class="us-button" data-toggle="collapse" data-target="#reviewRec">Review Recommended</button>
+            <button type="button" class="us-button" data-toggle="collapse" data-target="#reviewRec">Review Recommended
+            <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></button>
             <div id="reviewRec" class="collapse">
                 <div class="form-group">
                     <label class="sr-only" for="reviewRec">Review Recommended</label>
                     <div class="radio" *ngFor="let c of choices">
                         <label>
-                            <input type="radio" 
+                            <input type="radio"
                             name="reviewRecommendedFilter"
-                            id="reviewRecommendedFilter" 
+                            id="reviewRecommendedFilter"
                             [(ngModel)]="filterParams.reviewRec"
                             value="{{c.value}}">{{c.display}}
                         </label>
-                    </div>    
-                </div>  
+                    </div>
+                </div>
             </div>
         </div>
-        <hr>        
+        <hr>
         <!-- Agency -->
         <div class="filter-section">
-            <button type="button" class="us-button" data-toggle="collapse" data-target="#agency">Agency</button>
+            <button type="button" class="us-button" data-toggle="collapse" data-target="#agency">Agency
+            <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></button>
             <div id="agency" class="collapse">
                 <div class="form-group">
                     <label class="sr-only" for="agency">Agency</label>
-                        <input class="form-control" 
+                        <input class="form-control"
                         type="text"
-                        id="agency" 
+                        id="agency"
                         placeholder="Agency"
                         [(ngModel)]="filterParams.agency"
                         name="agency">
-                </div>  
+                </div>
             </div>
         </div>
-        <hr>        
+        <hr>
         <!-- Review Status -->
         <div class="filter-section">
-            <button type="button" class="us-button" data-toggle="collapse" data-target="#reviewStatus">Review Status</button>
+            <button type="button" class="us-button" data-toggle="collapse" data-target="#reviewStatus">
+              <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>Review Status</button>
             <div id="reviewStatus" class="collapse">
                 <div class="form-group">
                     <label class="sr-only" for="reviewStatus">Review Status</label>
                     <div class="radio" *ngFor="let c of status">
                         <label>
-                            <input type="radio" 
+                            <input type="radio"
                                 name="reviewStatusFilter"
-                                id="reviewStatusFilter" 
+                                id="reviewStatusFilter"
                                 [(ngModel)]="filterParams.reviewStatus"
                                 value="{{c}}">{{c}}
                         </label>
-                    </div>    
-                </div>  
+                    </div>
+                </div>
             </div>
         </div>
         <hr>
-        
+
         <!-- Office -->
         <div class="filter-section">
-            <button type="button" class="us-button" data-toggle="collapse" data-target="#office">Office</button>
+            <button type="button" class="us-button" data-toggle="collapse" data-target="#office">Office
+            <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></button>
             <div id="office" class="collapse">
                 <div class="form-group">
                     <label class="sr-only" for="office">Office</label>
-                    <input class="form-control" 
+                    <input class="form-control"
                             type="text"
-                            id="office" 
+                            id="office"
                             placeholder="Office"
                             [(ngModel)]="filterParams.office"
-                            name="office">    
-                </div>  
+                            name="office">
+                </div>
             </div>
         </div>
         <hr>
-        
+
         <!-- Contact -->
         <div class="filter-section">
-            <button type="button" class="us-button" data-toggle="collapse" data-target="#contact">Contact</button>
+            <button type="button" class="us-button" data-toggle="collapse" data-target="#contact">Contact
+            <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></button>
             <div id="contact" class="collapse">
                 <div class="form-group">
                     <label class="sr-only" for="contact">Contact</label>
-                        <input type="text" 
-                                class="form-control" 
-                                id="contact" 
+                        <input type="text"
+                                class="form-control"
+                                id="contact"
                                 placeholder="contact"
                                 [(ngModel)]="filterParams.contact"
-                                name="contact">    
-                </div>  
+                                name="contact">
+                </div>
             </div>
          </div>
-        <hr>    
-    </form> 
+        <hr>
+    </form>
 </div>

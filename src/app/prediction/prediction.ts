@@ -14,6 +14,7 @@ export class Prediction {
         public office: String,
         public contact: String,
         public position: String,
-        public reviewStatus: Boolean
+        public reviewStatus: Boolean,
+        public noticeType: String
     ) {}
 }
