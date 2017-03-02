@@ -1,8 +1,11 @@
 //Module: SRTHeaderComponent
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { AuthService } from '../auth/auth.service';
+import { ReportComponent } from '../report/report.component';
+import { Currentuser } from '../shared/currentuser';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-header',
@@ -10,16 +13,29 @@ import { AuthService } from '../auth/auth.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  firstName = localStorage.getItem('firstName');
+  private firstName = "";
+
   constructor(private authService: AuthService,
-              private router: Router) { }
+              private router: Router,
+              private user: UserService) {
+
+      user.updateCurrentUser.subscribe(currentUser => this.saveCurrentUser(currentUser));
+  }
 
   ngOnInit() {
   }
 
   onLogout() {
+    var u = new Currentuser("", "");
+    this.user.saveUser(u);
     this.authService.logout();
     this.router.navigateByUrl('/srt/auth');
+  }
+
+
+
+  saveCurrentUser(currentUser) {
+    this.firstName = currentUser.firstName;
   }
 
 }

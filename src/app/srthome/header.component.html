@@ -66,16 +66,16 @@
                 </div>
                 <ul id="gsaDropdown" class="nav navbar-nav" style="float: right;">
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle"
+                        <a *ngIf="firstName" href="#" class="dropdown-toggle"
                                     style="font-weight: 300"
                                     data-toggle="dropdown"
                                     role="button"
                                     aria-haspopup="true"
-                                    aria-expanded="false">Hi, {{firstName}}<span class="caret"></span></a>
+                                    aria-expanded="false">Welcome, {{firstName}}<span class="caret"></span></a>
 
                         <ul class="dropdown-menu">
-                            <li><a href="#" style="padding: 10px 20px;">Login</a></li>
-                            <li><a href="#" style="padding: 10px 20px;">Other</a></li>
+                            <li><a href="#" style="padding: 10px 20px;">Settings</a></li>
+                            <li><a href="#" style="padding: 10px 20px;">Password</a></li>
                             <li><button class="dropdown-item" type="button" style="padding: 10px 20px;" (click)="onLogout()">Log Out</button></li>
                       </ul>
                     </li>

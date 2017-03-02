@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { User } from '../user';
+import { Currentuser } from '../../shared/currentuser';
 import { AuthService } from '../auth.service';
+import { UserService } from '../../user.service';
 
 @Component({
   selector: 'app-userlogin',
@@ -13,8 +15,11 @@ import { AuthService } from '../auth.service';
 export class UserloginComponent implements OnInit {
   myForm: FormGroup;
 
+
+
   constructor(private authService: AuthService,
-              private router: Router) { }
+              private router: Router,
+              private user: UserService) { }
 
   ngOnInit() {
     this.myForm = new FormGroup({
@@ -29,8 +34,8 @@ export class UserloginComponent implements OnInit {
       .subscribe(
         data => {
           localStorage.setItem('token', data.token);
-          localStorage.setItem('firstName', data.firstName);
-          localStorage.setItem('agency', data.agency);
+          var currentUser = new Currentuser(data.firstName, data.agency);
+          this.user.saveUser(currentUser);
           this.router.navigateByUrl('/srt/report');
         },
         error => console.log(error)

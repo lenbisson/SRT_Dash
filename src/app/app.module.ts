@@ -27,6 +27,8 @@ import { RedReviewComponent } from './report/solicitation-detail/red-review.comp
 import { AuthComponent } from './auth/auth.component';
 import { AuthService } from './auth/auth.service';
 import { UserlogoutComponent } from './auth/userlogout/userlogout.component';
+import { UserService } from './user.service';
+
 
 @NgModule({
   declarations: [
@@ -61,7 +63,7 @@ import { UserlogoutComponent } from './auth/userlogout/userlogout.component';
     routing,
     ReactiveFormsModule
   ],
-  providers: [PredictionService, AgencyService, AuthService],
+  providers: [PredictionService, AgencyService, AuthService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
