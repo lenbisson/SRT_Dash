@@ -14,7 +14,7 @@ export class UserregistrationComponent implements OnInit {
   myForm: FormGroup;
 
   constructor(private authService: AuthService) { }
-
+// sets up data template for  registration form
   ngOnInit() {
     this.myForm = new FormGroup({
       firstName: new FormControl(null, Validators.required),
@@ -24,7 +24,7 @@ export class UserregistrationComponent implements OnInit {
       password: new FormControl(null, Validators.required)
     });
   }
-
+// requests user account for SRT
   onSubmit() {
     const user = new User(
       this.myForm.value.email,

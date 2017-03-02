@@ -8,13 +8,11 @@ import { Currentuser } from '../shared/currentuser';
   templateUrl: './srthome.component.html',
   styleUrls: ['./srthome.component.css']
 })
+
+/***************************
+  The SrthomeComponent is the root container for the application
+***************************/
 export class SrthomeComponent implements OnInit {
-
-  currentUser: Currentuser;
-
-  saveCurrentUser(currentUser: Currentuser) {
-    this.currentUser = new Currentuser(currentUser.firstName, currentUser.agency);
-  }
   constructor() { }
 
   ngOnInit() {

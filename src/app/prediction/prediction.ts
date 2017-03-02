@@ -1,5 +1,7 @@
-//Module: PredictionClass
-//function: Prediction Class definition
+/***************************************
+// The base class for the Prediction model.  These are the fields shown on the
+// SRT Report page.
+*****************************************/
 export class Prediction {
     constructor (
         public solNum: String,

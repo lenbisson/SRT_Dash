@@ -1,3 +1,5 @@
+// does the work for the sortable table.
+
 import {Pipe, PipeTransform} from '@angular/core';
 
 @Pipe({name: 'orderBy', pure: false})
@@ -32,13 +34,13 @@ export class OrderByPipe implements PipeTransform {
       //make a copy of the input's reference
       this.value = [...input];
       let value = this.value;
-        
+
         if(!Array.isArray(value)) return value;
 
         if(!Array.isArray(config) || (Array.isArray(config) && config.length == 1)){
             let propertyToCheck:string = !Array.isArray(config) ? config : config[0];
             let desc = propertyToCheck.substr(0, 1) == '-';
-            
+
             //Basic array
             if(!propertyToCheck || propertyToCheck == '-' || propertyToCheck == '+'){
                 return !desc ? value.sort() : value.sort().reverse();
@@ -63,8 +65,8 @@ export class OrderByPipe implements PipeTransform {
                         }
                     }
 
-                    return !desc 
-                        ? OrderByPipe._orderByComparator(aValue, bValue) 
+                    return !desc
+                        ? OrderByPipe._orderByComparator(aValue, bValue)
                         : -OrderByPipe._orderByComparator(aValue, bValue);
                 });
             }
@@ -92,8 +94,8 @@ export class OrderByPipe implements PipeTransform {
                         }
                     }
 
-                    let comparison = !desc 
-                        ? OrderByPipe._orderByComparator(aValue, bValue) 
+                    let comparison = !desc
+                        ? OrderByPipe._orderByComparator(aValue, bValue)
                         : -OrderByPipe._orderByComparator(aValue, bValue);
 
                     //Don't return 0 yet in case of needing to sort by next property

@@ -14,7 +14,6 @@ export class FilterComponent implements OnInit {
   agencies: String[];
 
 // initial state for filter fields
-// likely need to tweek this when we get login and roles implemented.
   filterParams = {
       agency: '',
       office: '',
@@ -40,16 +39,17 @@ export class FilterComponent implements OnInit {
   ];
 
   constructor(private predictionService: PredictionService, private agencyService: AgencyService) { }
-
+// ToDo: need list of subagencies in order to limit views for logged in user
   ngOnInit() {
     this.agencies = this.agencyService.getAgencies();
   }
-
+// filter results based upon user selection
   onSubmit(form: NgForm) {
   	this.predictionService.getFileteredPredictions(this.filterParams)
   		.subscribe(
         	predictions => {
         		this.predictions = predictions;
+            // notify other components of filtered records
         		this.predictionService.pushPredictions(predictions);
         	},
         	err => {
@@ -73,7 +73,7 @@ export class FilterComponent implements OnInit {
       reviewStatus: '',
       reviewRec: '',
     };
-
+// reset fields based upon cleared filter
     this.predictionService.getFileteredPredictions(this.filterParams)
       .subscribe(
           predictions => {

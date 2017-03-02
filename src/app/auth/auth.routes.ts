@@ -4,6 +4,7 @@ import { UserregistrationComponent } from './userregistration/userregistration.c
 import { UserloginComponent } from './userlogin/userlogin.component';
 import { UserlogoutComponent } from './userlogout/userlogout.component';
 
+// these routes are children to "/auth"
 export const AUTH_ROUTES: Routes = [
   {path: '', redirectTo: 'signup', pathMatch: 'full'},
   {path: 'signup', component: UserregistrationComponent},

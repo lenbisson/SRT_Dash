@@ -14,6 +14,7 @@ export class AuthService {
 // private userUrl = 'http://localhost:3000/user';
 // private loginUrl = 'http://localhost:3000/user/login';
 
+// register a new user
   signup(user: User){
     const body = JSON.stringify(user);
     const headers = new Headers({'Content-Type': 'application/json'});
@@ -22,6 +23,7 @@ export class AuthService {
         .catch((error: Response) => Observable.throw(error.json()));
   }
 
+// login user.  returns the json web token for the user.
   login(user: User){
     const body = JSON.stringify(user);
     const headers = new Headers({'Content-Type': 'application/json'});
@@ -29,7 +31,7 @@ export class AuthService {
         .map((response: Response)=> response.json())
         .catch((error: Response) => Observable.throw(error.json()));
   }
-
+// clear json web token on logout
   logout() {
     localStorage.removeItem("token");
   }

@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './red-review.component.html',
   styleUrls: ['./red-review.component.css']
 })
+// notification page for red update
 export class RedReviewComponent implements OnInit {
 
   constructor() { }

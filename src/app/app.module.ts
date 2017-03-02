@@ -20,7 +20,6 @@ import { SettingsComponent } from './settings/settings.component';
 import { PreExamComponent } from './pre-exam/pre-exam.component';
 import { AgencyService } from './agency.service';
 import { SolicitationDetailComponent } from './report/solicitation-detail/solicitation-detail.component';
-import { SolicitationItemComponent } from './report/solicitation-item/solicitation-item.component';
 import { ManualReviewComponent } from './report/solicitation-detail/manual-review.component';
 import { GreenReviewComponent } from './report/solicitation-detail/green-review.component';
 import { RedReviewComponent } from './report/solicitation-detail/red-review.component';
@@ -48,7 +47,6 @@ import { UserService } from './user.service';
     SettingsComponent,
     PreExamComponent,
     SolicitationDetailComponent,
-    SolicitationItemComponent,
     ManualReviewComponent,
     GreenReviewComponent,
     RedReviewComponent,

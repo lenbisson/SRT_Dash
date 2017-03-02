@@ -18,15 +18,14 @@ export class SolicitationDetailComponent implements OnInit {
 	constructor(private predictionService: PredictionService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    // listen for the activated route and use the 'id'  to pull chosen solicitation from mongo
     this.subscription = this.route.params.subscribe(
       (params: any) => {
         this.solicitationIndex = params['id'];
-        console.log("id is ", this.solicitationIndex);
-
+    // pull chosen solicitation from mongo
         this.predictionService.getSolicitation(this.solicitationIndex)
           .subscribe(
             solicitation => {
-              console.log("Response Sol =", solicitation);
               this.solicitation = solicitation;
           },
           err => {

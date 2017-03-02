@@ -21,13 +21,15 @@ export class UserloginComponent implements OnInit {
               private router: Router,
               private user: UserService) { }
 
+// init data for login form
   ngOnInit() {
     this.myForm = new FormGroup({
       email: new FormControl(null, Validators.required),
       password: new FormControl(null, Validators.required)
     });
   }
-
+// submit authentication data.  uses local storage to hold encrypted json web token and user agency
+// the jwt is set to expire after 2 hours.
   onSubmit() {
     const user = new User(this.myForm.value.email, this.myForm.value.password);
     this.authService.login(user)
