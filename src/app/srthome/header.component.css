@@ -1,10 +1,10 @@
 #gsaDropdown ul.dropdown-menu{
 		padding: 5px 0px;
-		background-color: #102c52 !important;
+		background-color: #205493 !important;
 }
 
 #gsaDropdown ul.dropdown-menu > li > a{
-		color: #f7f7f7;
+		color: white;
 		font-weight: 300;
 }
 
@@ -12,7 +12,16 @@
 #gsaDropdown ul.dropdown-menu > li > a:hover{
 		background-color: transparent!important;
 }
-
+.dropdown-item {
+	background-color: #205493;
+	color: white;
+    border: none;
+    padding: 15px 0px;
+    text-align: left;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
 #navbar ul.nav.navbar-nav,
 #navbar ul.nav.navbar-nav > li{
 		height: 60px;
