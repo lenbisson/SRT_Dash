@@ -18,21 +18,11 @@ export class PredictionService {
   constructor ( private http: Http ){};
   private predictionsUrl = 'http://ec2-54-145-198-134.compute-1.amazonaws.com:3000/predictions';
   private predictionFilterUrl = 'http://ec2-54-145-198-134.compute-1.amazonaws.com:3000/predictions/filter';
-	private solicitationUrl = 'http://ec2-54-145-198-134.compute-1.amazonaws.com:3000/solicitation';
+	private solicitationUrl = 'http://ec2-54-145-198-134.compute-1.amazonaws.com:3000/solicitation/';
 
   //  private predictionsUrl = 'http://localhost:3000/predictions';
   //  private predictionFilterUrl = 'http://localhost:3000/predictions/filter';
   //  private solicitationUrl = 'http://localhost:3000/solicitation';
-
-
-  // //function gets all SRT predictions from the web service and MongoDB
-  // getPredictions() {
-
-  //   return this.http.get(this.predictionsUrl)
-  //     .map((res:Response) => res.json())
-  //     .catch((error:any) => Observable.throw(error.json().error || 'Server Error'));
-
-  // }
 
   getFileteredPredictions(body) {
 		console.log(body);
@@ -46,7 +36,9 @@ export class PredictionService {
   }
 
   getSolicitation(index: String): Observable<Prediction> {
-    const solUrl = 'http://localhost:3000/solicitation/58ae2e63ef824fb75f4459e2';
+		console.log("index in service = ", index);
+
+    const solUrl = this.solicitationUrl + index;
     return this.http.get(solUrl)
       .map((res: Response) => res.json());
 

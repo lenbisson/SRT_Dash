@@ -21,6 +21,7 @@ export class SolicitationDetailComponent implements OnInit {
     this.subscription = this.route.params.subscribe(
       (params: any) => {
         this.solicitationIndex = params['id'];
+        console.log("id is ", this.solicitationIndex);
 
         this.predictionService.getSolicitation(this.solicitationIndex)
           .subscribe(
@@ -32,7 +33,6 @@ export class SolicitationDetailComponent implements OnInit {
               console.log(err);
           });
   });
-          
+
     }
 }
-
