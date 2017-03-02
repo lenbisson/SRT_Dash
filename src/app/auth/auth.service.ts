@@ -25,8 +25,6 @@ export class AuthService {
 
   logout() {
     localStorage.removeItem("token");
-    localStorage.removeItem("firstName");
-    localStorage.removeItem("agency");    
   }
 
   constructor(private http: Http) { }

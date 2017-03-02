@@ -63,7 +63,7 @@ export class FilterComponent implements OnInit {
     var agency = localStorage.getItem("agency");
     if (agency == "General Services Administration"){
       agency = "";
-    } 
+    }
     this.filterParams = {
       agency: agency,
       office: '',
