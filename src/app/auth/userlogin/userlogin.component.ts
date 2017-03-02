@@ -36,7 +36,7 @@ export class UserloginComponent implements OnInit {
       .subscribe(
         data => {
           localStorage.setItem('token', data.token);
-          localStorage.setItem('agency', data.agency);
+          localStorage.setItem('agency', data.agency); // ToDo: clean this up and use user service
           var currentUser = new Currentuser(data.firstName, data.agency);
           this.user.saveUser(currentUser);
           this.router.navigateByUrl('/srt/report');
