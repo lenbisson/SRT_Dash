@@ -1,3 +1,11 @@
+.glyphicon {
+	color: white;
+	float: right;
+	padding: 0px 15px;
+	font-weight: 300;
+}
+
+
 .us-button {
 	background-color: #205493;
 	color: white;
@@ -25,7 +33,7 @@
 }
 
 #filter {
-	padding: 0px;;  
+	padding: 0px;;
 }
 
 hr {

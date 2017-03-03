@@ -1,61 +1,19 @@
 
-<style>
-/* customize gsa dropdown menu */
-    #gsaDropdown ul.dropdown-menu{
-        padding: 5px 0px;
-        background-color: #102c52 !important; 
-    }
-    
-    #gsaDropdown ul.dropdown-menu > li > a{
-        color: #f7f7f7;
-        font-weight: 300;
-    }
-      
-    
-    #gsaDropdown ul.dropdown-menu > li > a:hover{
-        background-color: transparent!important; 
-    }
-    
-    #navbar ul.nav.navbar-nav, 
-    #navbar ul.nav.navbar-nav > li{
-        height: 60px;
-    }
-    
-    #navbar ul.nav.navbar-nav > li > a{
-        padding: 20px 15px;
-        font-weight: 300;
-        color: #102c52;
-    }
-    
-    #navbar ul.nav.navbar-nav > li.active > a{
-        color: #102c52!important;
-        font-weight: 700 !important;
-        border-bottom: 1px solid #102c52;
-        padding-bottom: 5px!important;
-        background-color: transparent !important;
-    }
-    
-    
-    hr {
-        margin: 0px;
-    }
-    
-</style>
 
 <!-- SRTDashHeaderView -->
 <div id="header" style="height: 100px; padding: 0px;">
-    <nav class="us-navbar navbar-default">  
+    <nav class="us-navbar navbar-default">
         <div class="container-fluid" style="padding: 0px;">
             <div class="navbar-header" style="height: 60px">
-                <a class="navbar-brand" href="#" style="padding: 20px 15px; height: 60px;">SRT</a>
+                <a class="navbar-left" href="/srt/report"><img id="srtlogo" src="https://s3.amazonaws.com/srt.bucket/assets/srtlogo.PNG"></a>
             </div>
 
-            <div class="collapse navbar-collapse" id="navbar" style="padding: 0px;">
+            <div *ngIf="firstName" class="collapse navbar-collapse" id="navbar" style="padding: 0px;">
                 <ul class="nav navbar-nav">
                     <li data-toggle="tab"><a [routerLink]="['report']">Report</a></li>
                     <li data-toggle="tab"><a [routerLink]="['preexam']">Pre-Exam</a></li>
                     <li data-toggle="tab"><a [routerLink]="['analytics']">Analytics</a></li>
-                    <li data-toggle="tab"><a [routerLink]="['settings']">Settings</a></li>
+                    <li data-toggle="tab"><a [routerLink]="['settings']">Members</a></li>
                 </ul>
                 <div class=" gsa_logo">
                     <a href='#' class="logo_li">
@@ -66,13 +24,18 @@
                 </div>
                 <ul id="gsaDropdown" class="nav navbar-nav" style="float: right;">
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" style="font-weight: 300" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hi, Len <span class="caret"></span></a>
+                        <a *ngIf="firstName" href="#" class="dropdown-toggle"
+                                    style="font-weight: 300"
+                                    data-toggle="dropdown"
+                                    role="button"
+                                    aria-haspopup="true"
+                                    aria-expanded="false">Hello, {{firstName}}<span class="caret"></span></a>
+
                         <ul class="dropdown-menu">
-                            <li><a href="#" style="padding: 10px 20px;">Login</a></li>
-                            <li><a href="#" style="padding: 10px 20px;">Other</a></li>
-                            <!--<li role="separator" class="divider" style="margin: 0px;"></li>-->
-                            <li><a href="#" style="padding: 10px 20px;">Log Out</a></li>
-                        </ul>
+                            <li><a href="#" style="padding: 10px 20px;">Profile</a></li>
+                            <li><a href="#" style="padding: 10px 20px;">Password</a></li>
+                            <li><button class="dropdown-item" type="button" style="padding: 10px 20px;" (click)="onLogout()">Log Out</button></li>
+                      </ul>
                     </li>
                 </ul>
 
@@ -82,5 +45,3 @@
     </nav>
     <hr>
 </div>
-
-

@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sol-report-header.component.css']
 })
 export class SolReportHeaderComponent implements OnInit {
-
+  // pull user's agency from storage to display in header
+  agency = localStorage.getItem("agency");
   constructor() { }
 
   ngOnInit() {

@@ -13,10 +13,16 @@
     font-weight: bold;
     letter-spacing: 1px;
     padding: 0px  20px;
-    width: 345px;
+    width: 800px;
 }
 
-
+#csv {
+  padding-left: 20px;
+}
+#csvlogo {
+  max-height: 40px;
+  padding-left: 10px;
+}
 
 /* Override padding for bootstrap. */
 .nopadding {
