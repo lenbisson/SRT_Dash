@@ -59,21 +59,7 @@
                     </div>
                 </div>
 			</div>
-			<div>
-				<label>(5) Does this solicitation establish how 508 conformance would be determined by the agency?</label>
-				<div class="form-group">
-                    <label class="sr-only" for="a_conformance">Agency Conformance</label>
-                    <div class="radio" *ngFor="let c of choices">
-                        <label>
-                            <input type="radio"  name="a_conformance"
-                                    id="a_conformance"
-                                    [(ngModel)]="review.a_conformance"
-                                    value="{{c.value}}">{{c.display}}
-                        </label>
-                    </div>
-                </div>
-
-			</div>
+			
 		</div>
 		<div class="form-group">
 			<label for="comment">Comment</label>

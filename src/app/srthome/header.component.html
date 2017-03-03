@@ -5,7 +5,7 @@
     <nav class="us-navbar navbar-default">
         <div class="container-fluid" style="padding: 0px;">
             <div class="navbar-header" style="height: 60px">
-                <a class="navbar-left" href="/srt/report"><img src="https://s3.amazonaws.com/srt.bucket/assets/srtlogo.PNG"></a>
+                <a class="navbar-left" href="/srt/report"><img id="srtlogo" src="https://s3.amazonaws.com/srt.bucket/assets/srtlogo.PNG"></a>
             </div>
 
             <div *ngIf="firstName" class="collapse navbar-collapse" id="navbar" style="padding: 0px;">
@@ -13,7 +13,7 @@
                     <li data-toggle="tab"><a [routerLink]="['report']">Report</a></li>
                     <li data-toggle="tab"><a [routerLink]="['preexam']">Pre-Exam</a></li>
                     <li data-toggle="tab"><a [routerLink]="['analytics']">Analytics</a></li>
-                    <li data-toggle="tab"><a [routerLink]="['settings']">Settings</a></li>
+                    <li data-toggle="tab"><a [routerLink]="['settings']">Members</a></li>
                 </ul>
                 <div class=" gsa_logo">
                     <a href='#' class="logo_li">
@@ -29,7 +29,7 @@
                                     data-toggle="dropdown"
                                     role="button"
                                     aria-haspopup="true"
-                                    aria-expanded="false">Welcome, {{firstName}}<span class="caret"></span></a>
+                                    aria-expanded="false">Hello, {{firstName}}<span class="caret"></span></a>
 
                         <ul class="dropdown-menu">
                             <li><a href="#" style="padding: 10px 20px;">Profile</a></li>
