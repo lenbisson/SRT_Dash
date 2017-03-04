@@ -9,3 +9,30 @@
     margin: 0px !important;
     padding: 0px !important;
 }
+
+.table-hover>tbody>tr:hover {
+    box-shadow: inset 0px 0px 5px yellow;
+    background-color: inherit !important;
+}
+
+.table-striped>tbody>tr:nth-of-type(odd) {
+    background-color: white;
+}
+
+.review-button {
+    background-image: none;
+    background-color: transparent;
+    border: 1px solid rgba(0,176,255,1);
+    border-radius: 5px;
+    color: rgba(0,176,255,1);
+    padding: 4px 10px;
+    font-size: 13px;
+}
+
+.review-button:hover {
+    outline: none;
+}
+
+#predictions td {
+    vertical-align: middle !important;
+}
