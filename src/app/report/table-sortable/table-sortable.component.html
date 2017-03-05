@@ -7,7 +7,7 @@
             <colgroup span="5"></colgroup>
             <tr>
               <th colspan="4" scope="colgroup" class="text-center">Solicitation Information</th>
-              <th colspan="5" scope="colgroup" class="text-center">Prediction of Acceptable 508 Language</th>
+              <th colspan="5" scope="colgroup" class="text-center">Prediction of Section 508 Language</th>
               <th colspan="5" scope="colgroup" class="text-center">Agency Information</th>
             </tr>
             <tr>
@@ -16,7 +16,7 @@
                 <span *ngIf="!sort.descending" class="glyphicon glyphicon-triangle-top"></span></th>
                 <th scope="col" (click)="changeSorting('noticeType')">Notice Type</th>
                 <th scope="col" (click)="changeSorting('title')">Title</th>
-                <th scope="col" (click)="changeSorting('url')" ><div style="width: 200px">URL</div></th>
+                <!--<th scope="col" (click)="changeSorting('url')" ><div style="width: 200px">URL</div></th>-->
                 <th scope="col" (click)="changeSorting('predictions.value')">Prediction</th>
                 <th scope="col" (click)="changeSorting('reviewRec')">Review Recommended</th>
                 <th scope="col" (click)="changeSorting('date')">Date Ingested</th>
@@ -34,7 +34,7 @@
                 <td>{{prediction.solNum}}</td>
                 <td>{{prediction.noticeType}}</td>
                 <td><a href="{{prediction.url}}">{{prediction.title}}</a></td>
-                <td><div style="width: 200px; overflow: hidden; word-break: break-all"><a href="{{prediction.url}}">{{prediction.url}}</a></div></td>
+                 <!--<td><div style="width: 200px; overflow: hidden; word-break: break-all"><a href="{{prediction.url}}">{{prediction.url}}</a></div></td>-->
                 <td>{{prediction.predictions.value}}</td>
                 <td>{{prediction.reviewRec}}</td>
                 <td>{{prediction.date}}</td>
@@ -45,7 +45,7 @@
                 <td>{{prediction.contact}}</td>
                 <td>{{prediction.position}}</td>
                 <td>{{prediction.reviewStatus}}</td>
-                <td><button type="button" (click)="onReview(prediction)">Review</button></td>
+                <td><button class='review-button' type="button" (click)="onReview(prediction)">Review</button></td>
             </tr>
     </table>
 </div>

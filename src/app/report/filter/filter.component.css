@@ -66,3 +66,17 @@ body {
 .form-group {
     margin: 15px 0px;
 }
+
+.filter-section .srt-collapse {
+    padding: 20px;
+}
+.filter-section .srt-collapse:after {
+    font-family: 'Glyphicons Halflings'; /* essential for enabling glyphicon */
+    content: "\e114"; /* adjust as needed, taken from bootstrap.css */
+    float: right; /* adjust as needed */
+    color: white;
+}
+
+.filter-section .srt-collapse.collapsed:after {
+      content: "\e113";   
+}
